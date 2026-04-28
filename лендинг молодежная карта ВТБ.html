@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ВТБ Молодёжная карта | Твоя карта. Твои возможности</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      color: #0B1C3A;
+    }
+
+    .page {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 56px;
+      padding: 48px 52px;
+      box-shadow: 0 40px 70px rgba(10, 40, 150, 0.08), 0 10px 25px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255,255,255,0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Шапка – логотип крупнее */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 32px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #0A2896, #3451D1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      font-weight: 500;
+      color: #2E3A5C;
+      font-size: 16px;
+    }
+
+    .nav-links span {
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    /* Главный блок */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-left h1 {
+      font-size: 58px;
+      font-weight: 800;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #0A2896 0%, #2442C7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+
+    .hero-left .subhead {
+      font-size: 20px;
+      font-weight: 500;
+      color: #2C3A60;
+      margin-top: 16px;
+      background: rgba(10,40,150,0.04);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-right {
+      background: linear-gradient(135deg, rgba(10,40,150,0.03) 0%, rgba(52,81,209,0.08) 100%);
+      border-radius: 40px;
+      padding: 36px 28px;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .gradient-quote {
+      font-size: 22px;
+      font-weight: 600;
+      color: #0A2896;
+    }
+
+    .gradient-quote strong {
+      font-weight: 800;
+      background: linear-gradient(135deg, #0A2896, #2E4FCF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 40px;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      background: transparent;
+      font-family: inherit;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0A2896, #1D3DBE);
+      color: white;
+      box-shadow: 0 10px 20px rgba(10,40,150,0.2);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(10,40,150,0.15);
+      color: #0A2896;
+    }
+
+    /* Преимущества */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .benefit-item {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(15px);
+      border-radius: 28px;
+      padding: 24px 18px;
+      border: 1px solid rgba(10,40,150,0.06);
+    }
+
+    .benefit-icon {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .benefit-title {
+      font-weight: 700;
+      font-size: 20px;
+      color: #0A2896;
+      margin-bottom: 6px;
+    }
+
+    .benefit-desc {
+      font-size: 14px;
+      color: #42506C;
+      font-weight: 500;
+    }
+
+    .features-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 28px;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .feature-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .feature-line span {
+      background: rgba(10,40,150,0.05);
+      border-radius: 50px;
+      padding: 6px 14px;
+    }
+
+    .cashback-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(25px);
+      border-radius: 32px;
+      padding: 24px 22px;
+      border: 1px solid rgba(10,40,150,0.07);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .cashback-item {
+      flex: 1 1 80px;
+      text-align: center;
+    }
+
+    .cashback-percent {
+      font-size: 30px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0A2896, #3050D0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cashback-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2B3550;
+    }
+
+    .all-link {
+      margin-left: auto;
+      font-weight: 700;
+      color: #0A2896;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .savings-panel {
+      background: rgba(10,40,150,0.03);
+      backdrop-filter: blur(15px);
+      border-radius: 30px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .apply-panel {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(25px);
+      border-radius: 30px;
+      padding: 24px 28px;
+      border: 1px solid rgba(10,40,150,0.08);
+      text-align: center;
+    }
+
+    .apply-title {
+      font-weight: 800;
+      font-size: 22px;
+      color: #0A2896;
+    }
+
+    .apply-btn {
+      background: linear-gradient(135deg, #0A2896, #1F3EC0);
+      border: none;
+      color: white;
+      border-radius: 40px;
+      padding: 14px 24px;
+      font-weight: 700;
+      margin-top: 16px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(12px);
+      padding: 14px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid rgba(10,40,150,0.06);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .detail-box {
+      background: rgba(10,40,150,0.02);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 16px 20px;
+      font-size: 15px;
+      color: #1E2740;
+      border: 1px solid rgba(10,40,150,0.08);
+      margin-top: 8px;
+    }
+
+    .app-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,40,150,0.03);
+      border-radius: 24px;
+      padding: 20px 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #7A84A0;
+      text-align: right;
+    }
+
+    hr {
+      border: 0.5px solid rgba(10,40,150,0.08);
+      margin: 12px 0 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Хедер с крупным ВТБ -->
+    <div class="header">
+      <div class="logo">ВТБ</div>
+      <div class="nav-links">
+        <span>Карты</span>
+        <span>Кэшбэк</span>
+        <span>Приложение</span>
+      </div>
+    </div>
+
+    <!-- Главный экран -->
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1>Молодёжная<br>карта</h1>
+        <div class="subhead">Твоя карта. Твои возможности</div>
+      </div>
+      <div class="hero-right">
+        <div class="gradient-quote">
+          <strong>Специально для тех,</strong><br> кто строит будущее уже сегодня
+        </div>
+        <div class="cta-buttons">
+          <a href="https://www.vtb.ru/personal/karty/debetovye/dlya-molodezhi/" target="_blank" class="btn btn-primary">Оформить карту</a>
+          <button id="detailsBtn" class="btn btn-outline">Подробнее ▾</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок с подробным описанием (скрыт по умолчанию) -->
+    <div id="detailsBlock" class="detail-box hidden">
+      <strong>Молодёжная карта ВТБ</strong> — это бесплатное обслуживание, кэшбэк до 15% рублями, до 5% на остаток по накопительному счёту и снятие наличных без комиссии в банкоматах ВТБ. Оформить может любой гражданин РФ старше 14 лет по паспорту. Карта поддерживает бесконтактную оплату, переводы через СБП и управление в приложении ВТБ Онлайн.
+    </div>
+
+    <!-- Преимущества -->
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">🆓</div>
+        <div class="benefit-title">Бесплатно</div>
+        <div class="benefit-desc">обслуживание навсегда</div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💸</div>
+        <div class="benefit-title">Кэшбэк до 15%</div>
+        <div class="benefit-desc">рублями у партнеров</div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📈</div>
+        <div class="benefit-title">До 5% годовых</div>
+        <div class="benefit-desc">на остаток по счёту</div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🏧</div>
+        <div class="benefit-title">Снятие без комиссии</div>
+        <div class="benefit-desc">в банкоматах ВТБ</div>
+      </div>
+    </div>
+
+    <!-- Возможности + кэшбэк -->
+    <div class="features-row">
+      <div class="features-list">
+        <div class="feature-line"><span>📱</span> Оплата телефоном или картой</div>
+        <div class="feature-line"><span>💸</span> Переводы без комиссии через СБП</div>
+        <div class="feature-line"><span>📲</span> Приложение ВТБ Онлайн</div>
+        <div class="feature-line"><span>🎯</span> Акции и выгода каждый день</div>
+      </div>
+      <div class="cashback-card">
+        <div class="cashback-item"><div class="cashback-percent">до 15%</div><div class="cashback-label">партнеры</div></div>
+        <div class="cashback-item"><div class="cashback-percent">5%</div><div class="cashback-label">кафе/рестораны</div></div>
+        <div class="cashback-item"><div class="cashback-percent">3%</div><div class="cashback-label">онлайн</div></div>
+        <div class="cashback-item"><div class="cashback-percent">1%</div><div class="cashback-label">все покупки</div></div>
+        <div class="all-link">Все категории ▾</div>
+      </div>
+    </div>
+
+    <!-- Накопительный счет + оформить -->
+    <div class="bottom-grid">
+      <div class="savings-panel">
+        <div><strong>До 5% годовых</strong><div style="font-weight:500; margin-top:4px;">на остаток по счёту</div></div>
+        <div style="font-weight:700; color:#0A2896;">Узнать больше ▾</div>
+      </div>
+      <div class="apply-panel">
+        <div class="apply-title">Оформи карту онлайн</div>
+        <div style="margin:8px 0; font-weight:500;">Паспорт, от 14 лет</div>
+        <a href="https://www.vtb.ru/personal/karty/debetovye/dlya-molodezhi/" target="_blank" class="apply-btn">Оформить за пару минут</a>
+      </div>
+    </div>
+
+    <!-- Вопросы и ответы (кликабельные) -->
+    <div class="faq-grid" id="faqContainer">
+      <div class="faq-item" data-faq="who">Кто может оформить карту? <span>▾</span></div>
+      <div class="faq-item" data-faq="cost">Сколько стоит обслуживание? <span>▾</span></div>
+      <div class="faq-item" data-faq="cashback">Как получать кэшбэк? <span>▾</span></div>
+      <div class="faq-item" data-faq="withdraw">Где снимать без комиссии? <span>▾</span></div>
+    </div>
+
+    <!-- Динамические ответы -->
+    <div id="faqAnswerBox" class="detail-box hidden"></div>
+
+    <!-- Приложение -->
+    <div class="app-footer">
+      <div style="font-weight:700; font-size:18px; color:#0A2896;">📱 ВТБ Онлайн</div>
+      <div style="font-weight:500;">Управляй картой: лимиты, блокировка, расходы</div>
+    </div>
+
+    <hr>
+    <div class="copyright">
+      © 2024 Банк ВТБ (ПАО). Генеральная лицензия Банка России № 0000.
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Подробнее
+      const detailsBtn = document.getElementById('detailsBtn');
+      const detailsBlock = document.getElementById('detailsBlock');
+
+      if (detailsBtn && detailsBlock) {
+        detailsBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          detailsBlock.classList.toggle('hidden');
+        });
+      }
+
+      // FAQ ответы
+      const faqItems = document.querySelectorAll('.faq-item');
+      const answerBox = document.getElementById('faqAnswerBox');
+
+      const faqData = {
+        who: 'Карту может оформить гражданин РФ в возрасте от 14 лет. Потребуется только паспорт. Оформление доступно онлайн или в отделении ВТБ.',
+        cost: 'Обслуживание карты полностью бесплатное — навсегда. Выпуск и доставка также без комиссии.',
+        cashback: 'Кэшбэк начисляется рублями автоматически. До 15% у партнёров, 5% в кафе и ресторанах, 3% за онлайн-покупки, 1% за остальные. Категории могут меняться, подробности в ВТБ Онлайн.',
+        withdraw: 'Снятие наличных без комиссии доступно в любых банкоматах ВТБ по всей России. В устройствах других банков возможна комиссия согласно тарифам.'
+      };
+
+      function showAnswer(key) {
+        if (!answerBox) return;
+        answerBox.textContent = faqData[key] || '';
+        answerBox.classList.remove('hidden');
+      }
+
+      faqItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const faqKey = this.getAttribute('data-faq');
+          if (faqKey) {
+            showAnswer(faqKey);
+          }
+        });
+      });
+
+      // Скрыть ответ, если кликнули вне FAQ (опционально)
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.faq-item') && !e.target.closest('#faqAnswerBox')) {
+          if (answerBox) {
+            answerBox.classList.add('hidden');
+          }
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
